@@ -1,17 +1,30 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { Nav, Item } from "../src/Components/Nav";
+import { Nav, Item, Segment } from "../src/Components/Nav";
 
 storiesOf("Nav", module).add("basic", () => (
   <Nav>
-    <Item active>
-      <a href="/">Home</a>
-    </Item>
-    <Item>
-      <a href="/">About</a>
-    </Item>
-    <Item>
-      <a href="/">News</a>
-    </Item>
+    <Segment>
+      <Item first active>
+        <a href="/">Product</a>
+      </Item>
+      <Item>
+        <a href="/">Whitepaper</a>
+      </Item>
+      <Item>
+        <a href="/">Roadmap</a>
+      </Item>
+      <Item last>
+        <a href="/">Team</a>
+      </Item>
+    </Segment>
+    <Segment right>
+      <Item first>
+        <a href="/">Community</a>
+      </Item>
+      <Item last>
+        <a href="/">Github</a>
+      </Item>
+    </Segment>
   </Nav>
 ));

@@ -2,6 +2,8 @@ import { createGlobalStyle } from "styled-components";
 import reboot from "styled-reboot";
 import theme from "./theme";
 import tinycolor from "tinycolor2";
+import BigJohn from "./assets/bigjohn.otf";
+import SlimJoe from "./assets/slimjoe.otf";
 
 // Options are, of course, optional, these are the default options
 const options = {
@@ -12,7 +14,7 @@ const options = {
     'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   fontSizeBase: "0.9rem",
   fontWeightBase: 400,
-  lineHeightBase: 1.5,
+  lineHeightBase: 1,
   bodyColor: "#212529",
   bodyBg: "#fff",
   headingsMarginBottom: "0.5rem",
@@ -33,7 +35,14 @@ const rebootCss = reboot(options);
 
 const GlobalStyle = createGlobalStyle`
   ${rebootCss}
-  /* other styles */
+  @font-face {
+    font-family: 'BigJohn';
+    src: url(${BigJohn}) format("opentype");
+  }
+  @font-face {
+    font-family: 'SlimJoe';
+    src: url(${SlimJoe}) format("opentype");
+  }
 `;
 
 export default GlobalStyle;
