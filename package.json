@@ -10,7 +10,8 @@
     "styled-components": "^4.2.0",
     "styled-flex-component": "^3.0.0",
     "styled-reboot": "^3.0.2",
-    "styled-theming": "^2.2.0"
+    "styled-theming": "^2.2.0",
+    "tinycolor2": "^1.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

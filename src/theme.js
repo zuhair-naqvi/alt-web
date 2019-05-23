@@ -1,7 +1,7 @@
 const theme = {
-  brancColor1: "#FFF",
-  brancColor2: "#E0E0E0",
-  brancColor3: "#222222"
+  brandColor1: "#FFFFFF",
+  brandColor2: "#E0E0E0",
+  brandColor3: "#222222"
 };
 
 export default theme;
