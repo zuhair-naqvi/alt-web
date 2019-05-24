@@ -16,7 +16,7 @@ const StyledHeader = styled.div`
 const BlurPanel = styled.div`
   position: fixed;
   width: 100%;
-  height: ${props => (props.inView ? "10rem" : "5rem")};
+  height: ${props => (props.inView ? "7rem" : "5rem")};
   background linear-gradient(to bottom, ${props =>
     props.theme.brandColor1}, transparent);
 `;
@@ -33,7 +33,7 @@ const Header = ({ className }) => {
     return {
       position: "fixed",
       boxShadow: "0px 15px 10px -15px #999",
-      padding: "0 2rem 0 2rem",
+      padding: "0 1rem 0 1rem",
       maxWidth: "960px"
     };
   };

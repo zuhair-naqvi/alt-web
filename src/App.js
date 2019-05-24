@@ -17,7 +17,7 @@ const Canvas = styled.div`
 const Container = styled.div`
   max-width: 960px;
   width: fill-available;
-  padding: 0 2rem 0 2rem;
+  padding: 0 1rem 0 1rem;
 `;
 
 const Content = styled.div`
@@ -37,7 +37,7 @@ class App extends Component {
             <Container>
               <Content>
                 <img
-                  src="https://picsum.photos/960/500"
+                  src="https://picsum.photos/960/500?blur"
                   style={{ width: "100%" }}
                 />
               </Content>

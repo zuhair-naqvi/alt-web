@@ -17,6 +17,8 @@ const Segment = styled.div`
   justify-content: ${props => (props.right ? "flex-end" : "flex-start")};
   @media only screen and (max-width: 600px) {
     display: ${props => (props.right ? "none" : "flex")};
+    width: 100%;
+    justify-content: center;
   }
 `;
 

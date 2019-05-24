@@ -1,6 +1,6 @@
 const theme = {
   brandColor1: "#FFFFFF",
-  brandColor2: "#E0E0E0",
+  brandColor2: "#F0F0F0",
   brandColor3: "#222222"
 };
 
