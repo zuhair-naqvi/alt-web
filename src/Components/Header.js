@@ -45,7 +45,7 @@ const Header = ({ className }) => {
       <Nav style={getFixedStyles(inView)}>
         <Segment>
           <Item first active>
-            <a href="/">Product</a>
+            <a href="/">Intro</a>
           </Item>
           <Item>
             <a href="/">Whitepaper</a>

@@ -36,7 +36,13 @@ class App extends Component {
             </Container>
             <Container>
               <Content>
-                <Lorem count={30} />
+                <img
+                  src="https://picsum.photos/960/500"
+                  style={{ width: "100%" }}
+                />
+              </Content>
+              <Content>
+                <Lorem count={20} />
               </Content>
             </Container>
           </Canvas>
