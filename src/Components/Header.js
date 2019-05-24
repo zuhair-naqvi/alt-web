@@ -25,12 +25,12 @@ export default () => {
           <Item>
             <a href="/">Roadmap</a>
           </Item>
-          <Item last>
+          <Item>
             <a href="/">Team</a>
           </Item>
         </Segment>
         <Segment right>
-          <Item first>
+          <Item>
             <a href="/">Community</a>
           </Item>
           <Item last>

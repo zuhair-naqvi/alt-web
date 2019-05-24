@@ -4,13 +4,12 @@ const Nav = styled.div`
   width: 100%;
   display: flex;
   font-size: 1em;
-  justify-content: space-betwen;
+  justify-content: space-between;
   flex-flow: row wrap;
 `;
 
 const Segment = styled.div`
   display: flex;
-  width: 50%;
   justify-content: ${props => (props.right ? "flex-end" : "flex-start")};
 `;
 
