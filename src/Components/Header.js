@@ -11,6 +11,13 @@ const StyledHeader = styled.div`
   flex-direction: column;
 `;
 
+const BlurPanel = styled.div`
+  position: fixed;
+  width: 100%;
+  height: ${props => (props.inView ? "10rem" : "5rem")};
+  background linear-gradient(to bottom, #FFFFFF, transparent);
+`;
+
 const Header = ({ className }) => {
   const [ref, inView, entry] = useInView({
     /* Optional options */
@@ -30,6 +37,7 @@ const Header = ({ className }) => {
 
   return (
     <StyledHeader className={className} ref={ref}>
+      <BlurPanel inView={inView} />
       <Logo />
       <Nav style={getFixedStyles(inView)}>
         <Segment>
