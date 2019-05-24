@@ -24,8 +24,6 @@ const Content = styled.div`
   padding: 2rem 0 2rem 0;
 `;
 
-//  box-shadow: 0 4px 2px -2px #f0f0f0;
-
 class App extends Component {
   render() {
     return (

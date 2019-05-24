@@ -1,8 +1,10 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
-import { Nav, Item, Segment } from "./Nav";
+import { Nav, Item, Segment, Icon } from "./Nav";
 import Logo from "./Logo";
+import LogoTwitter from "react-ionicons/lib/LogoTwitter";
+import LogoGithub from "react-ionicons/lib/LogoGithub";
 
 const StyledHeader = styled.div`
   width: 100%;
@@ -15,11 +17,12 @@ const BlurPanel = styled.div`
   position: fixed;
   width: 100%;
   height: ${props => (props.inView ? "10rem" : "5rem")};
-  background linear-gradient(to bottom, #FFFFFF, transparent);
+  background linear-gradient(to bottom, ${props =>
+    props.theme.brandColor1}, transparent);
 `;
 
 const Header = ({ className }) => {
-  const [ref, inView, entry] = useInView({
+  const [ref, inView] = useInView({
     /* Optional options */
     threshold: 0.15
   });
@@ -56,10 +59,20 @@ const Header = ({ className }) => {
         </Segment>
         <Segment right>
           <Item>
-            <a href="/">Community</a>
+            <a href="/">
+              <Icon>
+                <LogoTwitter fontSize="1.4em" />
+              </Icon>
+              Community
+            </a>
           </Item>
           <Item last>
-            <a href="/">Github</a>
+            <a href="/">
+              <Icon>
+                <LogoGithub fontSize="1.4em" />
+              </Icon>
+              Github
+            </a>
           </Item>
         </Segment>
       </Nav>
