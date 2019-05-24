@@ -6,6 +6,7 @@ const Nav = styled.div`
   font-size: 1em;
   justify-content: space-between;
   flex-flow: row wrap;
+  background-color: ${props => props.theme.brandColor1};
 `;
 
 const Segment = styled.div`

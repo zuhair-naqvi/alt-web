@@ -14,14 +14,6 @@ const Canvas = styled.div`
   overflow: auto;
 `;
 
-const Divider = styled.div`
-  height: 1px;
-  width: 100%;
-  padding-bottom: 5px;
-  box-shadow: 0 4px 2px -2px #e0e0e0;
-  margin-top: ${props => props.offSetTop || 0};
-`;
-
 const Container = styled.div`
   max-width: 960px;
   width: fill-available;
@@ -44,7 +36,6 @@ class App extends Component {
             <Container>
               <Header />
             </Container>
-            <Divider offSetTop={"-7px"} />
             <Container>
               <Content>
                 <Lorem count={30} />

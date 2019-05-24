@@ -1,20 +1,37 @@
-import React, { Component } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import React from "react";
+import { useInView } from "react-intersection-observer";
+import styled from "styled-components";
 import { Nav, Item, Segment } from "./Nav";
 import Logo from "./Logo";
 
-const Header = styled.div`
+const StyledHeader = styled.div`
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
 `;
 
-export default () => {
+const Header = ({ className }) => {
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0.15
+  });
+  const getFixedStyles = inView => {
+    if (inView) {
+      return {};
+    }
+    return {
+      position: "fixed",
+      boxShadow: "0px 15px 10px -15px #999",
+      padding: "0 2rem 0 2rem",
+      maxWidth: "960px"
+    };
+  };
+
   return (
-    <Header>
+    <StyledHeader className={className} ref={ref}>
       <Logo />
-      <Nav>
+      <Nav style={getFixedStyles(inView)}>
         <Segment>
           <Item first active>
             <a href="/">Product</a>
@@ -38,6 +55,8 @@ export default () => {
           </Item>
         </Segment>
       </Nav>
-    </Header>
+    </StyledHeader>
   );
 };
+
+export default Header;
