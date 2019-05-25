@@ -1,9 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 import styled, { ThemeProvider } from "styled-components";
+import Loading from "./assets/loading.svg";
+import { Router } from "@reach/router";
 import theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
 import Header from "./Components/Header";
-import Lorem from "react-lorem-component";
+
+const Home = React.lazy(() => import("./screens/Home"));
 
 const Canvas = styled.div`
   display: flex;
@@ -18,10 +21,9 @@ const Container = styled.div`
   max-width: 960px;
   width: fill-available;
   padding: 0 1rem 0 1rem;
-`;
-
-const Content = styled.div`
-  padding: 2rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const App = props => {
@@ -34,15 +36,11 @@ const App = props => {
             <Header />
           </Container>
           <Container>
-            <Content>
-              <img
-                src="https://picsum.photos/960/500?blur"
-                style={{ width: "100%" }}
-              />
-            </Content>
-            <Content>
-              <Lorem count={20} />
-            </Content>
+            <Suspense fallback={<img src={Loading} />}>
+              <Router>
+                <Home path="/" />
+              </Router>
+            </Suspense>
           </Container>
         </Canvas>
       </div>
