@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
@@ -21,35 +21,33 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  padding: 2rem 0 2rem 0;
+  padding: 2rem 0 0 0;
 `;
 
-class App extends Component {
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
-        <div>
-          <GlobalStyle />
-          <Canvas>
-            <Container>
-              <Header />
-            </Container>
-            <Container>
-              <Content>
-                <img
-                  src="https://picsum.photos/960/500?blur"
-                  style={{ width: "100%" }}
-                />
-              </Content>
-              <Content>
-                <Lorem count={20} />
-              </Content>
-            </Container>
-          </Canvas>
-        </div>
-      </ThemeProvider>
-    );
-  }
-}
+const App = props => {
+  return (
+    <ThemeProvider theme={theme}>
+      <div>
+        <GlobalStyle />
+        <Canvas>
+          <Container>
+            <Header />
+          </Container>
+          <Container>
+            <Content>
+              <img
+                src="https://picsum.photos/960/500?blur"
+                style={{ width: "100%" }}
+              />
+            </Content>
+            <Content>
+              <Lorem count={20} />
+            </Content>
+          </Container>
+        </Canvas>
+      </div>
+    </ThemeProvider>
+  );
+};
 
 export default App;
