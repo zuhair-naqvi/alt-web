@@ -17,8 +17,11 @@ const BlurPanel = styled.div`
   position: fixed;
   width: 100%;
   height: ${props => (props.inView ? "7rem" : "5rem")};
-  background linear-gradient(to bottom, ${props =>
-    props.theme.brandColor1}, transparent);
+  background: linear-gradient(
+    to bottom,
+    ${props => props.theme.brandColor1},
+    transparent
+  );
 `;
 
 const Header = ({ className }) => {
