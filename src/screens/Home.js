@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Hero from "../assets/hero.jpg";
 import Lorem from "react-lorem-component";
+import Typing from "react-typing-animation";
 
 const Pad = styled.div`
   padding-top: 2rem;
@@ -24,13 +25,28 @@ const Banner = styled.div`
   text-shadow: #000 3px 0 12px;
 `;
 
+const blink = keyframes`
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+`;
+
+const Cursor = styled.span`
+  font-size: 1em;
+  padding-left: 2px;
+  animation: ${blink} 1s step-end infinite;
+`;
+
 export default () => {
   return (
     <div>
       <Pad />
       <Banner>
         <div>A phone that</div>
-        <div>won't spy on you.</div>
+        <Typing cursor={<Cursor>|</Cursor>}>won't spy on you.</Typing>
       </Banner>
       <Pad />
       <Lorem count={20} />
