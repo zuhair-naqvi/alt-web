@@ -12,7 +12,7 @@ export default props => {
       <Pad />
       <h1>{props.slug}</h1>
       <Pad />
-      <Lorem count={25} />
+      <Lorem count={5} />
     </div>
   );
 };

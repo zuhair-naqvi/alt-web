@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Match } from "@reach/router";
+import { Match, Link } from "@reach/router";
 
 const Nav = styled.div`
   width: 100%;
@@ -40,7 +40,7 @@ const Item = ({ link, children, ...props }) => {
       {({ match }) => {
         return (
           <StyledItem {...props} active={match}>
-            <a href={link}>{children}</a>
+            <Link to={link}>{children}</Link>
           </StyledItem>
         );
       }}
