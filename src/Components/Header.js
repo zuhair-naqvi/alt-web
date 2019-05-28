@@ -47,35 +47,28 @@ const Header = ({ className }) => {
       <Logo />
       <Nav style={getFixedStyles(inView)}>
         <Segment>
-          <Item first active>
-            <a href="/">Intro</a>
+          <Item first link="/">
+            Home
           </Item>
-          <Item>
-            <a href="/">Whitepaper</a>
-          </Item>
-          <Item>
-            <a href="/">Roadmap</a>
-          </Item>
-          <Item>
-            <a href="/">Team</a>
-          </Item>
+
+          <Item link="/p/whitepaper">Whitepaper</Item>
+
+          <Item link="/p/roadmap">Roadmap</Item>
+
+          <Item link="/p/team">Team</Item>
         </Segment>
         <Segment right>
-          <Item>
-            <a href="/">
-              <Icon>
-                <LogoTwitter fontSize="1.4em" />
-              </Icon>
-              Community
-            </a>
+          <Item link="#">
+            <Icon>
+              <LogoTwitter fontSize="1.4em" />
+            </Icon>
+            Community
           </Item>
-          <Item last>
-            <a href="/">
-              <Icon>
-                <LogoGithub fontSize="1.4em" />
-              </Icon>
-              Github
-            </a>
+          <Item link="#" last>
+            <Icon>
+              <LogoGithub fontSize="1.4em" />
+            </Icon>
+            Github
           </Item>
         </Segment>
       </Nav>

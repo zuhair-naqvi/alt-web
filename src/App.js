@@ -7,6 +7,7 @@ import GlobalStyle from "./GlobalStyle";
 import Header from "./Components/Header";
 
 const Home = React.lazy(() => import("./screens/Home"));
+const Page = React.lazy(() => import("./screens/Page"));
 
 const Canvas = styled.div`
   display: flex;
@@ -39,6 +40,7 @@ const App = props => {
             <Suspense fallback={<img src={Loading} />}>
               <Router>
                 <Home path="/" />
+                <Page path="/p/:slug" />
               </Router>
             </Suspense>
           </Container>

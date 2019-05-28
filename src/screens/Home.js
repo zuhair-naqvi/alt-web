@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import styled, { keyframes } from "styled-components";
-import Hero from "../assets/hero.jpg";
+import Hero from "../assets/hero3.jpg";
 import Lorem from "react-lorem-component";
 import Typing from "react-typing-animation";
 
