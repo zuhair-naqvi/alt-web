@@ -1,31 +1,14 @@
 import React, { Suspense } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import Loading from "./assets/loading.svg";
-import { Router } from "@reach/router";
+import { TransitionRouter as Router } from "./Components/TransitionRouter";
 import theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
+import { Canvas, Container } from "./Components/Layout";
 import Header from "./Components/Header";
 
 const Home = React.lazy(() => import("./screens/Home"));
 const Page = React.lazy(() => import("./screens/Page"));
-
-const Canvas = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: fill-available;
-  width: 100%;
-  overflow: auto;
-`;
-
-const Container = styled.div`
-  max-width: 960px;
-  width: fill-available;
-  padding: 0 1rem 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 
 const App = props => {
   return (
@@ -36,14 +19,12 @@ const App = props => {
           <Container>
             <Header />
           </Container>
-          <Container>
-            <Suspense fallback={<img src={Loading} />}>
-              <Router>
-                <Home path="/" />
-                <Page path="/p/:slug" />
-              </Router>
-            </Suspense>
-          </Container>
+          <Suspense fallback={<img src={Loading} />}>
+            <Router primary={false}>
+              <Home path="/" />
+              <Page path="/p/:slug" />
+            </Router>
+          </Suspense>
         </Canvas>
       </div>
     </ThemeProvider>

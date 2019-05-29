@@ -1,12 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import Hero from "../assets/hero3.jpg";
 import Lorem from "react-lorem-component";
 import Typing from "react-typing-animation";
-
-const Pad = styled.div`
-  padding-top: 2rem;
-`;
+import { Container, Pad } from "../Components/Layout";
+import Hero from "../assets/hero3.jpg";
 
 const Banner = styled.div`
   width: 100%;
@@ -42,7 +39,7 @@ const Cursor = styled.span`
 
 export default () => {
   return (
-    <div>
+    <Container>
       <Pad />
       <Banner>
         <div>A phone that</div>
@@ -50,6 +47,6 @@ export default () => {
       </Banner>
       <Pad />
       <Lorem count={20} />
-    </div>
+    </Container>
   );
 };

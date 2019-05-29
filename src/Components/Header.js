@@ -1,7 +1,7 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
-import { Nav, Item, Segment, Icon } from "./Nav";
+import { Nav, Item, Segment, Pager, Icon } from "./Nav";
 import Logo from "./Logo";
 import LogoTwitter from "react-ionicons/lib/LogoTwitter";
 import LogoGithub from "react-ionicons/lib/LogoGithub";
@@ -47,15 +47,20 @@ const Header = ({ className }) => {
       <Logo />
       <Nav style={getFixedStyles(inView)}>
         <Segment>
-          <Item first link="/">
-            Home
-          </Item>
-
-          <Item link="/p/whitepaper">Whitepaper</Item>
-
-          <Item link="/p/roadmap">Roadmap</Item>
-
-          <Item link="/p/team">Team</Item>
+          <Pager>
+            <Item key="hm" first link="/">
+              Home
+            </Item>
+            <Item key="wp" link="/p/whitepaper">
+              Whitepaper
+            </Item>
+            <Item key="rm" link="/p/roadmap">
+              Roadmap
+            </Item>
+            <Item key="tm" link="/p/team">
+              Team
+            </Item>
+          </Pager>
         </Segment>
         <Segment right>
           <Item link="#">

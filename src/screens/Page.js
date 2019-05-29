@@ -1,18 +1,14 @@
 import React from "react";
 import Lorem from "react-lorem-component";
-import styled from "styled-components";
-
-const Pad = styled.div`
-  padding-top: 2rem;
-`;
+import { Container, Pad } from "../Components/Layout";
 
 export default props => {
   return (
-    <div>
+    <Container style={{ alignItems: "flex-start" }}>
       <Pad />
       <h1>{props.slug}</h1>
       <Pad />
-      <Lorem count={5} />
-    </div>
+      <Lorem count={25} />
+    </Container>
   );
 };
