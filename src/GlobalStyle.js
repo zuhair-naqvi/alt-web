@@ -43,6 +43,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'SlimJoe';
     src: url(${SlimJoe}) format("opentype");
   }
+  body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
 `;
 
 export default GlobalStyle;

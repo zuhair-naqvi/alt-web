@@ -1,4 +1,6 @@
+import React, { useState, Fragment } from "react";
 import styled from "styled-components";
+import { Match, Link } from "@reach/router";
 
 const Nav = styled.div`
   width: 100%;
@@ -10,6 +12,7 @@ const Nav = styled.div`
   @media only screen and (max-width: 600px) {
     justify-content: center;
   }
+  z-index: 2;
 `;
 
 const Segment = styled.div`
@@ -22,7 +25,11 @@ const Segment = styled.div`
   }
 `;
 
-const Item = styled.div`
+const Icon = styled.span`
+  margin-right: 5px;
+`;
+
+const StyledItem = styled.div`
   font-size: 1em;
   margin: 0px ${props => (props.last ? "0px" : "10px")} 0px
     ${props => (props.first ? "0px" : "10px")};
@@ -32,8 +39,34 @@ const Item = styled.div`
     ${props => (props.active ? props.theme.brandColor3 : "transparent")};
 `;
 
-const Icon = styled.span`
-  margin-right: 5px;
-`;
+const Item = ({ link, children, prev, index, ...props }) => {
+  return (
+    <Match path={link}>
+      {({ match }) => (
+        <StyledItem {...props} active={match}>
+          <Link to={link} state={{ forward: index > prev }}>
+            {children}
+          </Link>
+        </StyledItem>
+      )}
+    </Match>
+  );
+};
 
-export { Nav, Item, Segment, Icon };
+const Pager = ({ children }) => {
+  const [prev, setPrev] = useState(0);
+
+  return (
+    <Fragment>
+      {children.map((child, index) => {
+        return React.cloneElement(child, {
+          prev,
+          index,
+          onClick: () => setPrev(index - 1)
+        });
+      })}
+    </Fragment>
+  );
+};
+
+export { Nav, Item, Pager, Segment, Icon };
